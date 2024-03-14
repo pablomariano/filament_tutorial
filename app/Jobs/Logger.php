@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use 
 
 class Logger implements ShouldQueue
 {
@@ -25,6 +26,8 @@ class Logger implements ShouldQueue
      */
     public function handle(): void
     {
-        //
-    }
+        sleep(2);
+        echo "Job dispatched";
+        Log::info("Job dispatched");
+}
 }
